@@ -20,7 +20,8 @@
   ],
   "rules": {
     "prettier/prettier": "error",
-     "import/extensions": [
+    "class-methods-use-this": "off",
+    "import/extensions": [
       "error",
       "ignorePackages",
       {
