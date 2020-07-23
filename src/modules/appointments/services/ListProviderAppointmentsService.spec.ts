@@ -21,20 +21,20 @@ describe('listProviderAppointments', () => {
     const appointment1 = await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 22, 14, 0, 0),
+      date: new Date(2020, 6, 29, 14, 0, 0),
     });
 
     const appointment2 = await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 22, 15, 0, 0),
+      date: new Date(2020, 6, 29, 15, 0, 0),
     });
 
     const appointments = await listProviderAppointments.execute({
       provider_id: 'provider',
       year: 2020,
       month: 7,
-      day: 22,
+      day: 29,
     });
 
     expect(appointments).toEqual([appointment1, appointment2]);
@@ -44,20 +44,20 @@ describe('listProviderAppointments', () => {
     const appointment1 = await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 22, 14, 0, 0),
+      date: new Date(2020, 6, 29, 14, 0, 0),
     });
 
     const appointment2 = await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 22, 15, 0, 0),
+      date: new Date(2020, 6, 29, 15, 0, 0),
     });
 
     let appointments = await listProviderAppointments.execute({
       provider_id: 'provider',
       year: 2020,
       month: 7,
-      day: 22,
+      day: 29,
     });
 
     console.log('primeiro ', appointments);
@@ -66,7 +66,7 @@ describe('listProviderAppointments', () => {
       provider_id: 'provider',
       year: 2020,
       month: 7,
-      day: 22,
+      day: 29,
     })) as Appointment[];
 
     console.log('segundo ', appointments);

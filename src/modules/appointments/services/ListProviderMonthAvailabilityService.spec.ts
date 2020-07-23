@@ -16,61 +16,61 @@ describe('ListProviderMonthAvailability', () => {
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 8, 0, 0),
+      date: new Date(2020, 6, 24, 8, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 9, 0, 0),
+      date: new Date(2020, 6, 24, 9, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 10, 0, 0),
+      date: new Date(2020, 6, 24, 10, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 11, 0, 0),
+      date: new Date(2020, 6, 24, 11, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 12, 0, 0),
+      date: new Date(2020, 6, 24, 12, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 13, 0, 0),
+      date: new Date(2020, 6, 24, 13, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 14, 0, 0),
+      date: new Date(2020, 6, 24, 14, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 15, 0, 0),
+      date: new Date(2020, 6, 24, 15, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 16, 0, 0),
+      date: new Date(2020, 6, 24, 16, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
-      date: new Date(2020, 6, 21, 17, 0, 0),
+      date: new Date(2020, 6, 24, 17, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
@@ -87,10 +87,10 @@ describe('ListProviderMonthAvailability', () => {
 
     expect(availability).toEqual(
       expect.arrayContaining([
-        { day: 20, available: true },
         { day: 21, available: false },
-        { day: 22, available: true },
-        { day: 23, available: true },
+        { day: 22, available: false },
+        { day: 24, available: false },
+        { day: 25, available: true },
       ]),
     );
   });
