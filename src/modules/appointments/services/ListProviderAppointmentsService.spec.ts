@@ -41,6 +41,8 @@ describe('listProviderAppointments', () => {
   });
 
   it('should be able to list appointments on a specific day from cache', async () => {
+    let appointmetsCached = Array(new Appointment());
+
     const appointment1 = await fakeAppointmentsRepository.create({
       provider_id: 'provider',
       user_id: 'user',
@@ -60,17 +62,20 @@ describe('listProviderAppointments', () => {
       day: 29,
     });
 
-    console.log('primeiro ', appointments);
-
-    appointments = (await listProviderAppointments.execute({
+    appointments = await listProviderAppointments.execute({
       provider_id: 'provider',
       year: 2020,
       month: 7,
       day: 29,
-    })) as Appointment[];
+    });
 
-    console.log('segundo ', appointments);
+    appointmetsCached = appointments.map(appointment =>
+      Object.assign(new Appointment(), {
+        ...appointment,
+        date: new Date(appointment.date),
+      }),
+    );
 
-    expect(appointments).toEqual([appointment1, appointment2]);
+    expect(appointmetsCached).toEqual([appointment1, appointment2]);
   });
 });
