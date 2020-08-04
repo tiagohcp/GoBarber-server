@@ -37,6 +37,9 @@ class UsersRepository implements IUsersRepository {
         where: {
           id: Not(except_user_id),
         },
+        order: {
+          name: 'ASC',
+        },
       });
     } else {
       users = await this.ormRepository.find();
